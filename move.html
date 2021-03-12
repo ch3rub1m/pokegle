@@ -1,0 +1,29 @@
+<div>
+    <input id="pm-name" type="text" onchange="changePage()" placeholder="梦幻"/>
+</div>
+<iframe id="move-page"></iframe>
+
+<style>
+    #pm-name {
+        width: 100%;
+        height: 5%;
+        text-align:center;
+        vertical-align:middle;
+        font-size: 150%;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+    } 
+</style>
+
+<script>
+    function changePage () {
+        const pmNameInput = document.querySelector('#pm-name')
+        let pmName = pmNameInput.value || pmNameInput.placeholder
+        let pageURL = `https://wiki.52poke.com/zh-hans/${pmName}/第三世代招式表#可学会招式表`
+        const iframe = document.querySelector('#move-page')
+        iframe.src = pageURL
+    }
+    changePage()
+</script>
